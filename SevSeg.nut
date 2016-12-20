@@ -1,4 +1,5 @@
-s library allows an Esquilo to easily display numbers and characters on a 4 digit 7-segment
+/*
+ This library allows an Esquilo to easily display numbers and characters on a 4 digit 7-segment
  display without a separate 7-segment display controller.
  If you have feature suggestions or need support please use the github support page: https://github.com/sparkfun/SevSeg
  Original Library by Dean Reading (deanreading@hotmail.com: http://arduino.cc/playground/Main/SevenSegmentLibrary), 2012
@@ -291,48 +292,44 @@ class SevSeg
         characterArray[77]  = 0x00;  // 0b0000000;  // 77  'M'  NO DISPLAY
         characterArray[78]  = 0x15;  // 0b0010101;  // 78  'n'
         characterArray[79]  = 0x7e;  // 0b1111110;  // 79  'O'
-        /*
-        characterArray[80]  = 0b1100111;  // 80  'P'
-        characterArray[81]  = 0b1110011;  // 81  'q'
-        characterArray[82]  = 0b0000101;  // 82  'r'
-        characterArray[83]  = 0b1011011;  // 83  'S'
-        characterArray[84]  = 0b0001111;  // 84  't'
-        characterArray[85]  = 0b0111110;  // 85  'U'
-        */
+        characterArray[80]  = 0x67;  // 0b1100111;  // 80  'P'
+        characterArray[81]  = 0x73;  // 0b1110011;  // 81  'q'
+        characterArray[82]  = 0x05;  // 0b0000101;  // 82  'r'
+        characterArray[83]  = 0x5b;  // 0b1011011;  // 83  'S'
+        characterArray[84]  = 0x0f;  // 0b0001111;  // 84  't'
+        characterArray[85]  = 0x3e;  // 0b0111110;  // 85  'U'
         characterArray[86]  = 0x00;  // 0b0000000;  // 86  'V'  NO DISPLAY
         characterArray[87]  = 0x00;  // 0b0000000;  // 87  'W'  NO DISPLAY
         characterArray[88]  = 0x00;  // 0b0000000;  // 88  'X'  NO DISPLAY
-        /*
-        characterArray[89]  = 0b0111011;  // 89  'y'
+        characterArray[89]  = 0x3b;  // 0b0111011;  // 89  'y'
         characterArray[90]  = 0x00;  // 0b0000000;  // 90  'Z'  NO DISPLAY
-        characterArray[91]  = 0b1001110;  // 91  '['
+        characterArray[91]  = 0x4e;  // 0b1001110;  // 91  '['
         characterArray[92]  = 0x00;  // 0b0000000;  // 92  '\'  NO DISPLAY
-        characterArray[93]  = 0b1111000;  // 93  ']'
+        characterArray[93]  = 0x78;  // 0b1111000;  // 93  ']'
         characterArray[94]  = 0x00;  // 0b0000000;  // 94  '^'  NO DISPLAY
-        characterArray[95]  = 0b0001000;  // 95  '_'
-        characterArray[96]  = 0b0000010;  // 96  '`'
-        characterArray[97]  = 0b1110111;  // 97  'a' SAME AS CAP
-        characterArray[98]  = 0b0011111;  // 98  'b' SAME AS CAP
-        characterArray[99]  = 0b0001101;  // 99  'c'
-        characterArray[100] = 0b0111101;  // 100 'd' SAME AS CAP
-        characterArray[101] = 0b1101111;  // 101 'e'
-        characterArray[102] = 0b1000111;  // 102 'F' SAME AS CAP
-        characterArray[103] = 0b1011110;  // 103 'G' SAME AS CAP
-        characterArray[104] = 0b0010111;  // 104 'h'
-        characterArray[105] = 0b0010000;  // 105 'i'
-        characterArray[106] = 0b0111000;  // 106 'j' SAME AS CAP
+        characterArray[95]  = 0x08;  // 0b0001000;  // 95  '_'
+        characterArray[96]  = 0x02;  // 0b0000010;  // 96  '`'
+        characterArray[97]  = 0x77;  // 0b1110111;  // 97  'a' SAME AS CAP
+        characterArray[98]  = 0x1f;  // 0b0011111;  // 98  'b' SAME AS CAP
+        characterArray[99]  = 0x0d;  // 0b0001101;  // 99  'c'
+        characterArray[100] = 0x3d;  // 0b0111101;  // 100 'd' SAME AS CAP
+        characterArray[101] = 0x6f;  // 0b1101111;  // 101 'e'
+        characterArray[102] = 0x47;  // 0b1000111;  // 102 'F' SAME AS CAP
+        characterArray[103] = 0x5e;  // 0b1011110;  // 103 'G' SAME AS CAP
+        characterArray[104] = 0x17;  // 0b0010111;  // 104 'h'
+        characterArray[105] = 0x10;  // 0b0010000;  // 105 'i'
+        characterArray[106] = 0x38;  // 0b0111000;  // 106 'j' SAME AS CAP
         characterArray[107] = 0x00;  // 0b0000000;  // 107 'k'  NO DISPLAY
-        characterArray[108] = 0b0110000;  // 108 'l'
-        characterArray[109] = 00x00;  // b0000000;  // 109 'm'  NO DISPLAY
-        characterArray[110] = 0b0010101;  // 110 'n' SAME AS CAP
-        characterArray[111] = 0b0011101;  // 111 'o'
-        characterArray[112] = 0b1100111;  // 112 'p' SAME AS CAP
-        characterArray[113] = 0b1110011;  // 113 'q' SAME AS CAP
-        characterArray[114] = 0b0000101;  // 114 'r' SAME AS CAP
-        characterArray[115] = 0b1011011;  // 115 'S' SAME AS CAP
-        characterArray[116] = 0b0001111;  // 116 't' SAME AS CAP
-        characterArray[117] = 0b0011100;  // 117 'u'
-        */
+        characterArray[108] = 0x30;  // 0b0110000;  // 108 'l'
+        characterArray[109] = 0x00;  // 0b0000000;  // 109 'm'  NO DISPLAY
+        characterArray[110] = 0x15;  // 0b0010101;  // 110 'n' SAME AS CAP
+        characterArray[111] = 0x1d;  // 0b0011101;  // 111 'o'
+        characterArray[112] = 0x67;  // 0b1100111;  // 112 'p' SAME AS CAP
+        characterArray[113] = 0x73;  // 0b1110011;  // 113 'q' SAME AS CAP
+        characterArray[114] = 0x05;  // 0b0000101;  // 114 'r' SAME AS CAP
+        characterArray[115] = 0x5b;  // 0b1011011;  // 115 'S' SAME AS CAP
+        characterArray[116] = 0x0f;  // 0b0001111;  // 116 't' SAME AS CAP
+        characterArray[117] = 0x1c;  // 0b0011100;  // 117 'u'
         characterArray[118] = 0x00;  // 0b0000000;  // 118 'v'  NO DISPLAY
         characterArray[119] = 0x00;  // 0b0000000;  // 119 'w'  NO DISPLAY
         characterArray[120] = 0x00;  // 0b0000000;  // 120 'x'  NO DISPLAY
